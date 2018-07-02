@@ -24,6 +24,10 @@ const mergeAppendArray = (...args) => _mergeWith(
 const productionConfig = {
     devtool: '#source-map',
 
+    output: {
+        publicPath: process.env.PUBLIC_PATH
+    },
+
     plugins: [
         new MiniCssExtractPlugin({
             filename: '[name].[hash].css',
