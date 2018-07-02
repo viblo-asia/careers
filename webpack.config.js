@@ -1,6 +1,9 @@
 import path from 'path';
 import dotenv from 'dotenv';
 import webpack from 'webpack';
+import _concat from 'lodash/concat';
+import _isArray from 'lodash/isArray';
+import _mergeWith from 'lodash/mergeWith';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import CleanWebpackPlugin from 'clean-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
@@ -21,15 +24,6 @@ const mergeAppendArray = (...args) => _mergeWith(
 const productionConfig = {
     devtool: '#source-map',
 
-    optimize: {
-        minimize: {
-            sourceMap: true,
-            compress: {
-                warnings: false
-            }
-        }
-    },
-
     plugins: [
         new MiniCssExtractPlugin({
             filename: '[name].[hash].css',
@@ -45,7 +39,10 @@ const productionConfig = {
 const baseConfig = {
     mode: process.env.NODE_ENV,
 
-    entry: ['./resources/js/index.js', './resources/scss/index.scss'],
+    entry: [
+        // './resources/js/index.js',
+        './resources/scss/index.scss'
+    ],
 
     output: {
         path: __dirname + '/dist',
@@ -123,4 +120,6 @@ const baseConfig = {
     }
 };
 
-export default baseConfig;
+export default isProduction
+    ? mergeAppendArray(baseConfig, productionConfig)
+    : baseConfig;

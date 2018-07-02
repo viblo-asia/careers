@@ -1,0 +1,10 @@
+.link {
+    color: inherit;
+
+    &--plain {
+        &:hover {
+            color: inherit;
+            text-decoration: none;
+        }
+    }
+}
