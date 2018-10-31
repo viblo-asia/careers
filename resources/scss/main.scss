@@ -1,7 +1,6 @@
 .navbar {
     height: 60px;
     padding: 15px 0;
-    box-shadow: 0 4px 4px 0 rgba(0,0,0,.1);
 
     &__title {
         font-size: 2rem;
@@ -24,6 +23,27 @@
     &__text {
         font-size: 1.3rem;
         line-height: 2rem;
+        text-align: left;
+    }
+
+    .banner {
+        border-top: 100px solid #73AFF4;
+        background-color: #73AFF4;
+        p {
+            color: #FDFDFD;
+            text-align: left;
+            font-size: 2.5rem;
+        }
+    }
+
+    .justify-content-around {
+        position: relative;
+        background-color: #F4FBFF;
+        border: 20px solid #F4FBFF;
+        p {
+            position: absolute;
+            top: 20px;
+        }
     }
 }
 
@@ -43,23 +63,28 @@
         }
 
         &__text {
-            font-size: 1.5rem;
+            font-size: 0.9rem;
             line-height: 2.25rem;
         }
     }
 }
 
 .section-jobs {
-    .jobs-list-sm-only {
-        font-size: 1.25rem;
-        padding-left: 20px;
+    .container {
+        background-image: linear-gradient(#ffffff, #D4ECFE);
     }
 }
 
-.section-footer {
-    background-color: #f8f8f8;
+.break-line {
+    border: none;
+    border-top: 3px solid #5488c7;
+    margin-top: 1.5rem;
+    width: 4.5rem;
+}
 
+.section-footer {
     .footer {
+        background-color: #f8f8f8;
         &__container {
             padding: 40px 0 60px;
         }
